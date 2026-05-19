@@ -1,0 +1,17 @@
+C:\git\OnvifTestConsoleApp\bin\Debug\net10.0\OnvifTestConsoleApp.exe
+C:\git\OnvifTestConsoleApp\bin\Debug\net10.0\OnvifTestConsoleApp.deps.json
+C:\git\OnvifTestConsoleApp\bin\Debug\net10.0\OnvifTestConsoleApp.runtimeconfig.json
+C:\git\OnvifTestConsoleApp\bin\Debug\net10.0\OnvifTestConsoleApp.dll
+C:\git\OnvifTestConsoleApp\bin\Debug\net10.0\OnvifTestConsoleApp.pdb
+C:\git\OnvifTestConsoleApp\obj\Debug\net10.0\OnvifTestConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\git\OnvifTestConsoleApp\obj\Debug\net10.0\OnvifTestConsoleApp.AssemblyInfoInputs.cache
+C:\git\OnvifTestConsoleApp\obj\Debug\net10.0\OnvifTestConsoleApp.AssemblyInfo.cs
+C:\git\OnvifTestConsoleApp\obj\Debug\net10.0\OnvifTestConsoleApp.csproj.CoreCompileInputs.cache
+C:\git\OnvifTestConsoleApp\obj\Debug\net10.0\OnvifTestConsoleApp.dll
+C:\git\OnvifTestConsoleApp\obj\Debug\net10.0\refint\OnvifTestConsoleApp.dll
+C:\git\OnvifTestConsoleApp\obj\Debug\net10.0\OnvifTestConsoleApp.pdb
+C:\git\OnvifTestConsoleApp\obj\Debug\net10.0\OnvifTestConsoleApp.genruntimeconfig.cache
+C:\git\OnvifTestConsoleApp\obj\Debug\net10.0\ref\OnvifTestConsoleApp.dll
+C:\git\OnvifTestConsoleApp\bin\Debug\net10.0\MQTTnet.dll
+C:\git\OnvifTestConsoleApp\obj\Debug\net10.0\OnvifTestConsoleApp.csproj.AssemblyReference.cache
+C:\git\OnvifTestConsoleApp\obj\Debug\net10.0\OnvifTes.A43C5FFC.Up2Date
