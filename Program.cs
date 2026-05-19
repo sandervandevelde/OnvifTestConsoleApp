@@ -120,25 +120,26 @@ namespace OnvifTestConsoleApp
   }
 }";
 
-            //azure-iot-operations/asset-operations/demofactory-161-onvif-device-onvif/PTZ/GetStatus
-            //{
-            //    "GetStatus":{
-            //        "ProfileToken": "profile_1"
-            //    }
-            //}
+            var topicGetStatus = $"azure-iot-operations/asset-operations/{asset}/PTZ/GetStatus";
+            var payloadGetStatus = @"
+{
+    ""GetStatus"":{
+        ""ProfileToken"": ""profile_1""
+    }
+}";
 
             await mqttClient.PublishAsync(
                 new MqttApplicationMessageBuilder()
-                    .WithTopic(topicAbsoluteMove) // TOPIC
+                    .WithTopic(topicGetStatus) // TOPIC
                     .WithCorrelationData(Encoding.UTF8.GetBytes(correlationData))
                     .WithContentType("application/json")
                     .WithMessageExpiryInterval(60)
                     .WithQualityOfServiceLevel(MQTTnet.Protocol.MqttQualityOfServiceLevel.AtLeastOnce)
                     .WithResponseTopic(responseTopic)
-                    .WithPayload(payloadAbsoluteMove) // PAYLOAD
+                    .WithPayload(payloadGetStatus) // PAYLOAD
                     .Build(),
                 CancellationToken.None);
-            Console.WriteLine($"Command send to {topicAbsoluteMove}."); // TOPIC
+            Console.WriteLine($"Command send to {payloadGetStatus}."); // TOPIC
 
             await Task.Delay(60000); // Wait for messages to be received before exiting
             Console.WriteLine("End of program.");
