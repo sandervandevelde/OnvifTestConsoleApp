@@ -45,10 +45,16 @@ namespace OnvifTestConsoleApp
                 else
                 {
                     Console.WriteLine($"+ Payload = {response}");
+                    Console.WriteLine($"+ CorrelationData = {Encoding.UTF8.GetString(e.ApplicationMessage.CorrelationData)}");
+
+                    for (int i = 0; i < e.ApplicationMessage.UserProperties.Count; i++)
+                    {
+                        var prop = e.ApplicationMessage.UserProperties[i];
+                        Console.WriteLine($"+ UserProperty[{i}] = {prop.Name} : {prop.ReadValueAsString()}");
+                    }
                 }
 
                 _lastResponse = response;
-
             };
 
             // Connect
@@ -91,8 +97,8 @@ namespace OnvifTestConsoleApp
     ""ProfileToken"": ""profile_1"",
     ""Position"": {
       ""PanTilt"": {
-	      ""x"": -0.1, 
-  	      ""y"": -0.8
+	      ""x"": 0.2, 
+  	      ""y"": -0.5
       }
     } 
   }
@@ -114,7 +120,6 @@ namespace OnvifTestConsoleApp
   }
 }";
 
-
             //azure-iot-operations/asset-operations/demofactory-161-onvif-device-onvif/PTZ/GetStatus
             //{
             //    "GetStatus":{
@@ -122,19 +127,18 @@ namespace OnvifTestConsoleApp
             //    }
             //}
 
-
             await mqttClient.PublishAsync(
                 new MqttApplicationMessageBuilder()
-                    .WithTopic(topicGetProfiles) // TOPIC
+                    .WithTopic(topicAbsoluteMove) // TOPIC
                     .WithCorrelationData(Encoding.UTF8.GetBytes(correlationData))
                     .WithContentType("application/json")
                     .WithMessageExpiryInterval(60)
                     .WithQualityOfServiceLevel(MQTTnet.Protocol.MqttQualityOfServiceLevel.AtLeastOnce)
                     .WithResponseTopic(responseTopic)
-                    .WithPayload(payloadGetProfiles) // PAYLOAD
+                    .WithPayload(payloadAbsoluteMove) // PAYLOAD
                     .Build(),
                 CancellationToken.None);
-            Console.WriteLine("Command send.");
+            Console.WriteLine($"Command send to {topicAbsoluteMove}."); // TOPIC
 
             await Task.Delay(60000); // Wait for messages to be received before exiting
             Console.WriteLine("End of program.");
