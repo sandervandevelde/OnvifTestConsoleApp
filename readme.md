@@ -11,7 +11,7 @@ The following actions are tested:
 * GetProfiles
 * RelativeMove
 * AbsoluteMove
-* topicContinuousMove
+* ContinuousMove
 * GetStatus
 
 See the code for the example MQTT V5 message.
