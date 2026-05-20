@@ -130,16 +130,16 @@ namespace OnvifTestConsoleApp
 
             await mqttClient.PublishAsync(
                 new MqttApplicationMessageBuilder()
-                    .WithTopic(topicGetStatus) // TOPIC
+                    .WithTopic(topicGetProfiles) // TOPIC
                     .WithCorrelationData(Encoding.UTF8.GetBytes(correlationData))
                     .WithContentType("application/json")
                     .WithMessageExpiryInterval(60)
                     .WithQualityOfServiceLevel(MQTTnet.Protocol.MqttQualityOfServiceLevel.AtLeastOnce)
                     .WithResponseTopic(responseTopic)
-                    .WithPayload(payloadGetStatus) // PAYLOAD
+                    .WithPayload(payloadGetProfiles) // PAYLOAD
                     .Build(),
                 CancellationToken.None);
-            Console.WriteLine($"Command send to {payloadGetStatus}."); // TOPIC
+            Console.WriteLine($"Command send to {payloadGetProfiles}."); // TOPIC
 
             await Task.Delay(60000); // Wait for messages to be received before exiting
             Console.WriteLine("End of program.");

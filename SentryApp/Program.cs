@@ -4,6 +4,11 @@ using MQTTnet.Packets;
 
 namespace OnvifTestConsoleApp
 {
+    // It is recommended to execute a GetProfiles command first so the correct profile name can be used in the AbsoluteMove command.
+    // The profile name is typically "profile_1" but may differ based on the device configuration.
+    // The GetProfiles command should be executed at least once, which may be due to the device initializing the profile information upon the first request.
+    // Otherwise, requests without responses might be observed until the profile information is initialized on the device.
+    // The PanTilt position values (x and y) should be within the supported range of the device, which is typically -1.0 to 1.0 for ONVIF PTZ devices.
     class Program
     {
         static string _lastResponse = string.Empty;
