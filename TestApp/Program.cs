@@ -139,7 +139,7 @@ namespace OnvifTestConsoleApp
                     .WithPayload(payloadGetProfiles) // PAYLOAD
                     .Build(),
                 CancellationToken.None);
-            Console.WriteLine($"Command send to {payloadGetProfiles}."); // TOPIC
+            Console.WriteLine($"Command '{payloadGetProfiles}' to '{topicGetProfiles}'."); // PAYLOAD + TOPIC
 
             await Task.Delay(60000); // Wait for messages to be received before exiting
             Console.WriteLine("End of program.");
